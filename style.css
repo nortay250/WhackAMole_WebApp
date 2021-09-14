@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    cursor: none;
+}
+
+body {
+    background-color: pink;
+    display: flex;
+    color: #707070;
+    justify-content: center;
+}
+
+.heading {
+    font-size: 2.5rem;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+.score,
+#time-left {
+    font-size: 1.3rem;
+    margin: 1em 1em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+.holesCont{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    justify-items: center;
+}
+
+.hole {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    background-color: black;
+    overflow: hidden;
+}
+
+.mole {
+    position: absolute;
+    z-index: 1;
+    height: 70px;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    animation: appear 0.3s linear;
+    pointer-events: none;
+}
+@keyframes appear {
+    from {
+        bottom: -60px;
+    }
+    to {
+        bottom: 0;
+    }
+}
+
+.buttons {
+    margin-top: 3em;
+    text-align: center;
+}
+
+button {
+    padding: 1em 2.5em;
+    margin-right: 1em;
+    background: white;
+    color: black;
+    border-radius: 3px;
+    outline: none;
+    font-weight: bold;
+}
+
+button.stop {
+    display: none;
+}
+
+.cursor img {
+    position: absolute;
+    height: 100px;
+    z-index: 2;
+    transform: translate(-10px, -40px);
+    pointer-events: none;
+  }
+  @keyframes hit {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-30deg);
+    }
+  }
